@@ -25,12 +25,12 @@ __Example:__ https://brutelogic.com.br/xss.php
 
 This site is well known and contains several xss. But sending this site to your active scanner will result in... nothing! 
 The reason is: Burp doesn't know about a, b1, b2, b3, b4, c1, c2, c3, c4, c5 and c6. Maybe there are even more vulns to test
-this parameters againat. Tunneling the following requests through 127.0.0.1:8080 (default Burp settings) will make them 
+this parameters against. Tunneling the following requests through 127.0.0.1:8080 (default Burp settings) will make them 
 accessible in burp.
 
 ### Prepare your tool
 
-You should rename the __example.app-settings.conf__ to app.settings.conf. Then adjust the settings. Usually the default 
+You should rename the __example.app-settings.conf__ to app-settings.conf. Then adjust the settings. Usually the default 
 ones are pretty good. But there are targets where sending 10 parameters per request is "healthier"!
 
 ### Step 1: Crawl the website
@@ -51,13 +51,13 @@ Connection: close
 
 ### Step 2: Extract potentially useful parameters
 
-I am bad at regular expression but my own work... you can take a look at inc/Parameters.py - using that regexpressions
-this tool will extract the following parameters: b2, b3, b4, c1, c2, c3, c4, c5 and c6
+I am bad at regular expression but they work (more or less)... you can take a look at inc/Parameters.py - using that 
+regular expressions this tool will extract the following parameters: b2, b3, b4, c1, c2, c3, c4, c5 and c6
 
 ### Step 3: Request the URL using GET/POST with those parameters
 
-Now the tool just takes every parameters, appends a random string and requests the url again. When a lot parameters were 
-extracted by this tool, the parameter list gets splitted in chunks with the same size. Its not good to send a GET request 
+Now the tool just takes every parameter, appends a random string and requests the url again. When a lot parameters were 
+extracted by this tool, the parameter list gets splitted in chunks with the same size. It's not good to send a GET request 
 with 300 parameters + values. But usually you will have two requests per URL (POST and GET). They look like this:
 
 #### The GET request:
@@ -94,8 +94,8 @@ b4=3b2083b&c1=4173e41&c2=2092f20&c3=242f424&c4=bdbc4bd&c5=32a8d32&c6=575e557&clo
 googleapis=b695cb6&i=34e9034&js=5690156&min=789f378&php=d0b5ad0&submit=4298242&text=a238ca2&viewport=92bb392
 ```
 
-As you can see not only the mentioned parameters were extracted, also some more are used here. Not perfect, but it's more
-than enough!
+As you can see, not only the mentioned parameters were extracted, also some more are used here. A better regular expression
+may be a solution to this "problem". But we can work with this currently.
 
 ### Step 4: Scan using Burp
 
@@ -103,7 +103,7 @@ By now you have those requests in your sitemap:
 
 ![sitemap](https://i.imgur.com/qBAWRlH.png)
 
-You can now just start you scanner on those parameters and wait for something cool to happen ;=)
+You can now just start your scanner on those parameters and wait for something cool to happen ;=)
 
 ![intruder](https://i.imgur.com/B14o6lK.png)
 
