@@ -84,6 +84,8 @@ b4=3b2083b&c1=4173e41&c2=2092f20&c3=242f424&c4=bdbc4bd&c5=32a8d32&c6=575e557&clo
 googleapis=b695cb6&i=34e9034&js=5690156&min=789f378&php=d0b5ad0&submit=4298242&text=a238ca2&viewport=92bb392
 ```
 
+As you can see not only the mentioned parameters were extracted, also some more are used here. Not perfect, but it's more
+than enough!
 
 ### Step 4: Scan using Burp
 
