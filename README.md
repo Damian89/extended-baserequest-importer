@@ -9,6 +9,16 @@ Often an attacker can find vulnerabilities in parameters which are obviously use
 manually is a tidious work - wouldn't it be nice to have this process automated. That way you could send the found post
 and get paramters to Burp Suite's active scanner and let it do the rest of the work.
 
+## Execution
+
+Plain and simple - it does not expect any arguments:
+
+```
+python3 extended-baserequest-importer.py
+```
+
+Don't forget to start Burp Suite Pro!
+
 ## How does this tool work?
 
 __Example:__ https://brutelogic.com.br/xss.php
