@@ -107,3 +107,10 @@ You can now just start your scanner on those parameters and wait for something c
 
 ![intruder](https://i.imgur.com/B14o6lK.png)
 
+
+## Support
+
+Do you like that tool? Did it help you to get a bounty? Want to give something back/support me? Why not!<br />
+
+#### Donate via PayPal: <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PPHDNEJWY5UXJ&source=url">CLICK</a>
+
